@@ -5,8 +5,8 @@
 <form action='/api/form/submit' enctype='multipart/form-data' method='post' class='questions w-full max-w-2xl'></form>
 <script>
   const questions = [
-    { label: 'Nama Startup', name: 'startup_name', type: 'text' },
-    { label: 'Tahun Berdiri', name: 'founded_year', type: 'number' },
+    { label: 'Startup Name', name: 'startup_name', type: 'text' },
+    { label: 'Faunded Year', name: 'founded_year', type: 'number' },
     { label: 'Address', name: 'address', type: 'text' },
     { label: 'Address line 2', name: 'address_line2', type: 'text' },
     { label: 'City/Town', name: 'city', type: 'text' },
@@ -14,37 +14,37 @@
     { label: 'Zip/Post Code', name: 'zip', type: 'text' },
     { label: 'Country', name: 'country', type: 'text' },
     { label: 'Website', name: 'website', type: 'url' },
-    { label: 'Nama Kontak', name: 'contact_name', type: 'text' },
-    { label: 'Jabatan', name: 'contact_position', type: 'text' },
-    { label: 'Email', name: 'contact_email', type: 'email' },
-    { label: 'Nomor Telepon', name: 'contact_phone', type: 'tel' },
-    { label: 'Deskripsi Startup (1 sentence Pitch)', name: 'pitch', type: 'text' },
+    { label: 'Contact Name', name: 'contact_name', type: 'text' },
+    { label: 'Contact Position', name: 'contact_position', type: 'text' },
+    { label: 'Contact Email', name: 'contact_email', type: 'email' },
+    { label: 'Contact Phone', name: 'contact_phone', type: 'tel' },
+    { label: 'About Startup (1 sentence Pitch)', name: 'pitch', type: 'text' },
     {
-      label: 'Jelaskan secara singkat tentang startup Anda',
+      label: 'Describe your startup in more detail',
       name: 'description',
       type: 'textarea',
     },
-    { label: 'Apa masalah yang ingin dipecahkan oleh startup Anda?', name: 'problem', type: 'textarea' },
-    { label: 'Apa solusi yang ditawarkan oleh startup Anda?', name: 'solution', type: 'textarea' },
-    { label: 'Apa keunggulan kompetitif startup Anda?', name: 'competitive_advantage', type: 'textarea' },
-    { label: 'Apa target pasar Anda?', name: 'target_market', type: 'text' },
-    { label: 'Apakah startup Anda sudah menghasilkan revenue?', name: 'revenue', type: 'text' },
-    { label: 'Apa pencapaian utama startup Anda sejauh ini?', name: 'achievements', type: 'textarea' },
-    { label: 'Sebutkan tim inti startup Anda dan jelaskan peran mereka', name: 'team', type: 'textarea' },
-    { label: 'Apakah startup Anda telah/pernah mendapatkan pendanaan?', name: 'funding', type: 'textarea' },
+    { label: 'What problem does your startup aim to solve?', name: 'problem', type: 'textarea' },
+    { label: 'What solution does your startup offer?', name: 'solution', type: 'textarea' },
+    { label: 'What competitive advantage does your startup have?', name: 'competitive_advantage', type: 'textarea' },
+    { label: 'Who is your target market?', name: 'target_market', type: 'text' },
+    { label: 'Has your startup generated any revenue', name: 'revenue', type: 'text' },
+    { label: 'What are the key achievements of your startup so far?', name: 'achievements', type: 'textarea' },
+    { label: 'Introduce your core startup team and explain their roles.', name: 'team', type: 'textarea' },
+    { label: 'Has your startup received funding in the past?', name: 'funding', type: 'textarea' },
     {
-      label: "Apa yang Anda harapkan dari partisipasi di 'AI Empower Connect'?",
+      label: 'What do you hope to gain from participating in ‘AI Empower Connect’?',
       name: 'expectations',
       type: 'textarea',
     },
-    { label: 'Apakah Anda sedang mencari pendanaan?', name: 'seeking_funding', type: 'text' },
+    { label: 'Are you currently seeking funding?', name: 'seeking_funding', type: 'text' },
     {
-      label: 'Selain pendanaan Apakah Startup Anda mencari partnership?',
+      label: 'Apart from funding, is your startup open to partnerships?',
       name: 'partnership',
       type: 'textarea',
     },
-    { label: 'Lampiran Pitch deck (Link Drive)', name: 'pitch_deck', type: 'url' },
-    { label: 'Link video demo (opsional)', name: 'demo_video', type: 'url' },
+    { label: 'Attach your pitch deck (Google Drive link).', name: 'pitch_deck', type: 'url' },
+    { label: 'Optional: Provide a link to a demo video.', name: 'demo_video', type: 'url' },
   ];
 
   questions.forEach((question, index) => {
@@ -69,7 +69,7 @@
 
     doc += `<astero-form class='questions-list hidden'>
       <div class='mb-8'>
-        <h1 class='text-4xl font-semibold mb-2'>
+        <h1 class='text-4xl font-semibold mb-2' style='text-shadow: 1px 2px 2px rgb(0 0 0 / 0.5)'>
           ${index + 1} ⭢ ${question.label}
         </h1>
         <p class='text-xl opacity-80'></p>
