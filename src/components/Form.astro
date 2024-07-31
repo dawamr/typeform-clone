@@ -94,6 +94,7 @@
 
   let currentStep = 0;
   const questionsList = document.querySelectorAll('.questions-list');
+  const inputList = document.querySelectorAll('input');
 
   function showStep(step: number) {
     questionsList.forEach((question, index) => {
@@ -104,6 +105,35 @@
       }
     });
   }
+
+  // function enterKey() {
+  //   document.addEventListener('keydown', (e) => {
+  //     if (e.key === 'Enter') {
+  //       currentStep++;
+  //       if (currentStep < questionsList.length) {
+  //         showStep(currentStep);
+  //       } else {
+  //         currentStep = questionsList.length - 1;
+  //         document.querySelector('form').submit();
+  //       }
+  //     }
+  //   });
+  // }
+
+  inputList.forEach((input) => {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        currentStep++;
+        if (currentStep < questionsList.length) {
+          showStep(currentStep);
+          inputList[currentStep].focus();
+        } else {
+          currentStep = questionsList.length - 1;
+          document.querySelector('form').submit();
+        }
+      }
+    });
+  });
 
   class AstroForm extends HTMLElement {
     constructor() {
@@ -118,6 +148,7 @@
         currentStep++;
         if (currentStep < questionsList.length) {
           showStep(currentStep);
+          inputList[currentStep].focus();
         } else {
           currentStep = questionsList.length - 1;
           this.innerHTML = 'Submit ↵';
@@ -145,6 +176,7 @@
         currentStep--;
         if (currentStep >= 0) {
           showStep(currentStep);
+          inputList[currentStep].focus();
         } else {
           currentStep = 0;
         }
