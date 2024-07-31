@@ -16,5 +16,5 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
     return new Response(error.message, { status: 500 });
   }
 
-  return redirect('/');
+  return redirect('/thanks');
 };
