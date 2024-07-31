@@ -54,16 +54,16 @@
     if (question.type === 'textarea') {
       input = `<textarea
           class='h-32 w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg text-2xl placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-300'
-          placeholder=${question.label}
-          type=${question.type}
-          name=${question.name}
+          placeholder="${question.label}"
+          type="${question.type}"
+          name="${question.name}"
         ></textarea>`;
     } else {
       input = `<input
           class='w-full px-4 py-3 bg-white bg-opacity-10 rounded-lg text-2xl placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-300'
-          type=${question.type}
-          placeholder=${question.label}
-          name=${question.name}
+          type="${question.type}"
+          placeholder="${question.label}"
+          name="${question.name}"
         />`;
     }
 

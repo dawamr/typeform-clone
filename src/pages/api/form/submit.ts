@@ -6,9 +6,9 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const formData = await request.formData();
-  const startup_name = formData.get('startup_name')?.toString();
+  // const startup_name = formData.get('startup_name')?.toString();
   const postData = Object.fromEntries(formData.entries());
-  // console.log(postData);
+  console.log(postData);
 
   const { data, error } = await supabase.from('question_answers').insert([postData]).select();
 
