@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<style>
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    25%,
+    75% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+
+  .shake {
+    animation: shake 0.8s ease-in-out infinite;
+    height: 250px;
+    width: 250px;
+  }
+  .card {
+    height: 5em;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  h1 {
+    text-shadow: 1px 2px 2px rgb(0 0 0 / 0.5);
+  }
+  p {
+    text-shadow: 1px 2px 2px rgb(0 0 0 / 0.05);
+  }
+</style>
+
+<Layout title='AI Empower Connect - Clossed'>
+  <img src='closed.png' alt='' class='shake' />
+  <div class='container w-full max-w-2xl card'>
+    <h1 class='text-5xl'>Thanks for your participant!</h1>
+    <p class='text-2xl mt-5'>Registration is now closed. We will get back to you soon.</p>
+  </div>
+</Layout>
