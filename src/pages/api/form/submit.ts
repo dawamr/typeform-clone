@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const postData = Object.fromEntries(formData.entries());
   console.log(postData);
 
-  const { data, error } = await supabase.from('question_answers').insert([postData]).select();
+  const { data, error } = await supabase.from('question_answers_ai_challenge').insert([postData]).select();
 
   if (error) {
     return new Response(error.message, { status: 500 });
